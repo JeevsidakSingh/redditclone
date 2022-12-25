@@ -13,12 +13,12 @@
 
     .activeDarkMenu {
 
-        @apply grid fixed bg-black cursor-pointer transform right-4 translate-y-12 border border-gray-200
+        @apply grid z-50 fixed bg-black cursor-pointer transform right-4 translate-y-12 border border-gray-200
     }
 
     .activeLightMenu {
 
-        @apply grid fixed bg-white cursor-pointer transform right-4 translate-y-12 border border-gray-200
+        @apply grid z-50 fixed bg-white cursor-pointer transform right-4 translate-y-12 border border-gray-200
     }
 
     .inactiveMenu {
