@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .icon {
+        @apply h-9 w-9 cursor-pointer rounded-sm lg:p-1 lg:hover:bg-gray-100
+    }
+    
+    .smicon {
+        @apply h-7 w-7 cursor-pointer rounded-sm mr-2
+    }
+
+    .activeDarkMenu {
+
+        @apply grid fixed bg-black cursor-pointer transform right-4 translate-y-12 border border-gray-200
+    }
+
+    .activeLightMenu {
+
+        @apply grid fixed bg-white cursor-pointer transform right-4 translate-y-12 border border-gray-200
+    }
+
+    .inactiveMenu {
+        @apply hidden fixed transform translate-x-4
+    }
+}
