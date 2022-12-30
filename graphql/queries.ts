@@ -120,3 +120,13 @@ query MyQuery($post_id: ID!){
         }
     }
 `
+
+export const GET_SUBREDDITS_WITH_LIMIT = gql`
+    query MyQuery {
+        getSubredditListLimit(limit: 10) {
+            created_at
+            id
+            topic
+        }
+    }
+`

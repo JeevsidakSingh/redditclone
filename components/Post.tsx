@@ -51,14 +51,14 @@ function Post({post}: Props) {
 
     const vote = votes?.find((vote) => vote.username == session?.user?.name)?.upvote
     
-    setVote(vote)
+    // setVote(vote)
   }, [data])
 
   const displayVotes = (data: any) => {
     const votes: Vote[] = data?.getVotesByPostId
     const displayNumber = votes?.reduce((total, vote) => (vote.upvote ? (total += 1): (total -= 1)), 0)
 
-    if (votes.length === 0) return 0;
+    if (votes?.length === 0) return 0;
 
     if (displayNumber === 0) {
       return votes[0]?.upvote ? 1 : -1

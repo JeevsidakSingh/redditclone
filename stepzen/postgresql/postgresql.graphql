@@ -40,7 +40,7 @@ type Posts {
 """
 Table 'subreddit' aliased as GQLName: 'Subreddit'
 """
-type Subreddit @key(fields: "topic") {
+type Subreddit @key(fields: "topic, id") {
   created_at: DateTime
   id: ID!
   topic: String
@@ -192,6 +192,15 @@ type Query {
       schema: "public"
       query: """
       SELECT "created_at", "id", "topic" FROM "subreddit" LIMIT $1 OFFSET $2
+      """
+      configuration: "postgresql_config"
+    )
+  getSubredditListLimit(limit: Int!): [Subreddit]
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      query: """
+      select * from "subreddit" order by "created_at" desc limit $1
       """
       configuration: "postgresql_config"
     )
