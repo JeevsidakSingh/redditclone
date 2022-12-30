@@ -126,13 +126,40 @@ type Query {
       table: "Posts"
       configuration: "postgresql_config"
     )
+  "Doesn't order the required way"
   getPostsList: [Posts]
     @dbquery(
       type: "postgresql"
       schema: "public"
-      table: "Posts"
+      query: """
+      select * from "Posts" 
+      order by "Posts"."created_at" desc
+      """
       configuration: "postgresql_config"
     )
+  getPostsListByTopic(topic: String!): [Posts]
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      query: """
+      select * from "Posts".id as id 
+      FROM "Posts" join "subreddit" on "subreddit"."id" = "Posts"."subreddit_id"
+      where "subreddit"."topic" = $1
+      order by "Posts"."created_at" desc
+      """
+      configuration: "postgresql_config"
+    )
+  
+  getPostListByPostId(post_id: ID!): Posts
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      query: """
+      SELECT * from "Posts" where "Posts"."id" = $1
+      """
+      configuration: "postgresql_config"
+    )
+
   getPostsPaginatedList(first: Int, after: Int): [Posts]
     @dbquery(
       type: "postgresql"
@@ -208,10 +235,9 @@ type Mutation {
       configuration: "postgresql_config"
     )
   insertComment(
-    username: String
-    post_id: ID
-    text: String
-    created_at: DateTime
+    username: String!
+    post_id: ID!
+    text: String!
   ): Comment
     @dbquery(
       type: "postgresql"
@@ -288,7 +314,6 @@ type Mutation {
   insertVote(
     username: String
     post_id: ID
-    created_at: DateTime
     upvote: Boolean
   ): Vote
     @dbquery(

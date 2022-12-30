@@ -8,6 +8,7 @@ import {BellIcon, ChatBubbleOvalLeftIcon, GlobeAmericasIcon, PlusIcon, SparklesI
 import {useState, useEffect} from 'react';
 import {useTheme} from 'next-themes'
 import { signIn, signOut, useSession} from 'next-auth/react';
+import Link from 'next/link'
 
 // Header component
 function Header() {
@@ -32,19 +33,24 @@ function Header() {
     <div className={theme == 'light' ? 'sticky bg-white top-0 z-50 flex px-4 py-2 shaddow-sm': 'sticky bg-black top-0 z-50 flex px-4 py-2 shaddow-sm'}>
       {/* Large Logo */}
         <div className='hidden relative lg:inline-flex h-10 w-20 flex-shrink-0 cursor-pointer'>
-            <Image 
-            objectFit='contain'
-            src={logo} alt='/'
-            layout='fill'
-            />
+            <Link href='/'>
+              <Image 
+                objectFit='contain'
+                src={logo} alt='/'
+                layout='fill'
+              />
+            </Link>
+            
         </div>
         {/* Small Logo */}
         <div className='relative h-9 w-12 flex-shrink-0 cursor-pointer lg:hidden'>
-            <Image 
-            objectFit='contain'
-            src={smlogo} alt='/'
-            layout='fill'
-            />
+            <Link href='/'>
+              <Image 
+                objectFit='contain'
+                src={smlogo} alt='/'
+                layout='fill'
+              />
+            </Link>      
         </div>
         {/* Home icon and arrow */}
         <div className='mx-7 flex items-center xl:min-w-[300px]'>
