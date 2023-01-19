@@ -1,3 +1,21 @@
+# Reddit 2.0!
+
+How it Looks:
+
+<img width="1512" alt="Screenshot 2023-01-19 at 1 08 26 PM" src="https://user-images.githubusercontent.com/109756410/213526824-925765fd-ac15-4fcb-b39a-d714759e76e9.png">
+
+<img width="1512" alt="Screenshot 2023-01-19 at 1 08 42 PM" src="https://user-images.githubusercontent.com/109756410/213526871-03abf191-d74d-4630-b144-df989cd7591c.png">
+
+<img width="500" alt="Screenshot 2023-01-19 at 1 09 57 PM" src="https://user-images.githubusercontent.com/109756410/213526910-df460b73-cdc5-454b-9bee-c6f3d06a256f.png">
+
+<img width="501" alt="Screenshot 2023-01-19 at 1 10 11 PM" src="https://user-images.githubusercontent.com/109756410/213526925-a8317559-fc84-4db7-af30-d61becc32761.png">
+
+<img width="501" alt="Screenshot 2023-01-19 at 1 10 20 PM" src="https://user-images.githubusercontent.com/109756410/213526934-6ff70b8c-509a-4760-b65a-7fa3e0248b44.png">
+
+
+<img width="499" alt="Screenshot 2023-01-19 at 1 10 59 PM" src="https://user-images.githubusercontent.com/109756410/213526945-b588d280-8d2a-4a12-9cfa-3480ee9068cb.png">
+
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
